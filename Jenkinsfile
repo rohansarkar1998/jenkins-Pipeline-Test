@@ -14,6 +14,7 @@ pipeline {
         steps {
             echo 'build application'
             echo "the credential is ${serverDetails}"
+            sh "${serverDetails}"
         }
     }
 
