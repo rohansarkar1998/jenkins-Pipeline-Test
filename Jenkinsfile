@@ -2,11 +2,18 @@
 pipeline {
     agent any
 
+    environment {
+
+            serverDetails = credentials('tomcat_deployer')
+
+    }
+
     stages {
         stage("build") {
 
         steps {
             echo 'build application'
+            echo "the credential is ${serverDetails}"
         }
     }
 
@@ -19,7 +26,7 @@ pipeline {
     
          stage("deploye") {
 
-        steps{
+        steps {
             echo 'deploye application'
         }
     
